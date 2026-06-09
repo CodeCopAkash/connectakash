@@ -1,6 +1,6 @@
 <head>
     <link rel="stylesheet" href="coin_flip.css">
-    <link rel="stylesheet" href="wait.css">  
+    <link rel="stylesheet" href="index.css">  
 </head>
 <body>
 
@@ -48,7 +48,13 @@
             result.textContent = "Flipping...";
             const toss = Math.random() < 0.5 ? "Heads" : "Tails";
 
-            setTimeout(() => {
+                setTimeout(() => {
+                    if(toss == "Heads"){
+                    coin.src = "/resources/flip-a-rs-10-indian-coin-head.png";
+                }
+                else{
+                    coin.src = "/resources/flip-a-rs-10-indian-coin-tail.png";
+                }
             result.textContent = toss;
             coin.classList.remove("flip");
             flipping = false;
