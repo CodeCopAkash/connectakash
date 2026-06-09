@@ -1,0 +1,40 @@
+#coin-toss {
+    text-align: center;
+    padding: 40px;
+}
+
+#coin {
+    font-size: 100px;
+    cursor: pointer;
+    margin: 20px 0;
+}
+#coin {
+    display: inline-block;
+    font-size: 100px;
+}
+#coin:hover {
+    transform: scale(1.05);
+}
+
+#flip-btn {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#result {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.flip {
+    animation: flip 1s ease;
+}
+
+@keyframes flip {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(1080deg);
+    }
+}

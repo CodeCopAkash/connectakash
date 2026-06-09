@@ -1,0 +1,58 @@
+<head>
+    <link rel="stylesheet" href="coin_flip.css">
+    <link rel="stylesheet" href="wait.css">  
+</head>
+<body>
+
+    <header class="white whitebg">
+        <a class="name" href="index.html" target=""><span class="first-name">Akash</span> <span class="last-name">Anand</span></a>
+        <div class="nav-links gray-700">
+            <a class="resume" href="https://drive.google.com/file/d/1_hTi6sSeiiXCx00YEpdrVTIHkZ7M07dO/view?usp=sharing" target="_blank">Resume</a>
+            <a href="project.html" target="">Projects</a>
+            <!--<a href="" target="_blank">About</a>
+            <a href="" target="_blank">Skills</a>
+            <a href="" target="_blank">Education</a>   
+            <a href="" target="_blank">Contect</a>-->
+        </div>
+        
+    </header>
+
+    <section id="coin-toss">
+        <h2>Coin Toss</h2>
+        <img id="coin" src="/resources/flip-a-rs-10-indian-coin-head.png" alt="Coin">
+
+        <p id="result">Click the coin to toss</p>
+        <p id="counter">Total Tosses: 0</p>
+    </section>
+    <script>
+        const coin = document.getElementById("coin");
+        
+        const result = document.getElementById("result");
+
+        let flipping = false;
+
+        coin.addEventListener("click", tossCoin);
+
+        let tossCount = 0;
+
+        function tossCoin() {
+
+            if (flipping) return;
+
+            flipping = true;
+
+            tossCount++;
+            document.getElementById("counter").textContent =`Total Tosses: ${tossCount}`;
+
+            coin.classList.add("flip");
+            result.textContent = "Flipping...";
+            const toss = Math.random() < 0.5 ? "Heads" : "Tails";
+
+            setTimeout(() => {
+            result.textContent = toss;
+            coin.classList.remove("flip");
+            flipping = false;
+            }, 1000);
+        }
+    </script>
+</body>
